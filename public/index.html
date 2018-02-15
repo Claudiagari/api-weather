@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,60 +11,67 @@
   <link rel="stylesheet" href="css/main.css">
   <title>Weather</title>
 </head>
+
 <body class="vh-100 body">
   <div class="row ">
     <form class="col s12 center-align">
       <h1>Weather</h1>
-      <div class="row ">
-        <div class="input-field col s12">
-          <input placeholder="Lima, Perú" id="city-search" type="text">
+      <div class="row">
+        <div class="input-field col s12 offset-l3 l6 offset-l3">
+          <input placeholder="Ejem. Lima, Perú" id="city-search" type="text">
           <label for="city-search">Ingrese Ciudad</label>
         </div>
-        <a class="waves-effect waves-light btn  blue-grey" id="search">
-          <i class="material-icons right">cloud</i>Buscar</a>
+      </div>
+      <div class="row">
+        <div class="col s12 offset-l3 l6 offset-l3">
+          <a class="waves-effect waves-light btn  blue-grey" id="search">
+            <i class="material-icons right">cloud</i>Buscar</a>
+        </div>
       </div>
     </form>
   </div>
-  <div class="row center-align">
-    <div class="offset-s1 col s10 offset-s1 offset-2 l8 offset-l2 " id="container">
-      <h4 id="city"></h4>
+  <div class="hide" id="main">
+    <div class="row center-align">
+      <div class="offset-s1 col s10 offset-s1 offset-2 l8 offset-l2 " id="container">
+        <h4 id="city"></h4>
+      </div>
     </div>
-  </div>
-  <div class="row center-align">
-    <div class="offset-s1 col s10 offset-s1 offset-2 l8 offset-l2 " id="container">
-      <img id="icon" class="responsive-img" src="" alt="">
-      <h4>
-        <span id="temperature"></span> °C</h4>
+    <div class="row center-align">
+      <div class="offset-s1 col s10 offset-s1 offset-2 l8 offset-l2 " id="container">
+        <img id="icon" class="responsive-img" src="" alt="">
+        <h4>
+          <span id="temperature"></span> °C</h4>
+      </div>
     </div>
-  </div>
-  <div class="row center-align">
-    <div class="col l6  col s6  ">
-      <span>Wind</span>
+    <div class="row center-align">
+      <div class="col l6  col s6  ">
+        <span>Wind</span>
+      </div>
+      <div class="col l6 s6">
+        <span id="wind"></span>
+      </div>
     </div>
-    <div class="col l6 s6">
-      <span id="wind"></span>
+    <div class="row center-align">
+      <div class="col l6  col s6  ">
+        <span>Humidity</span>
+      </div>
+      <div class="col l6 s6">
+        <span id="humidity"></span>
+      </div>
     </div>
-  </div>
-  <div class="row center-align">
-    <div class="col l6  col s6  ">
-      <span>Humidity</span>
+    <div class="row center-align">
+      <div class="col l6  col s6  ">
+        <span>Pressure</span>
+      </div>
+      <div class="col l6 s6">
+        <span id="pressure"></span>
+      </div>
     </div>
-    <div class="col l6 s6">
-      <span id="humidity"></span>
+    <div class="row center-align">
+      <button class="btn waves-effect waves-light blue-grey" id="prediction" type="submit" name="action">Predicción de la semana
+        <i class="material-icons right"></i>
+      </button>
     </div>
-  </div>
-  <div class="row center-align">
-    <div class="col l6  col s6  ">
-      <span>Pressure</span>
-    </div>
-    <div class="col l6 s6">
-      <span id="pressure"></span>
-    </div>
-  </div>
-  <div class="row center-align">
-  <button class="btn waves-effect waves-light blue-grey" id="prediction" type="submit" name="action">Predicción de la semana
-      <i class="material-icons right"></i>
-    </button>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVwz3mdh_9SgBU0vA6qFqD9eiVnhroNYE&callback=initGoogleAPI&libraries=places,geometry">
@@ -71,4 +79,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>

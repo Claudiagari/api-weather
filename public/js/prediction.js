@@ -40,7 +40,8 @@ $(document).ready(function() {
         $.each(size.sizes.size, function(i, myresultSize) {
           if (myresultSize.label == 'Large') {
             console.log(myresultSize.source);
-            $('.body').css('background', 'linear-gradient(rgba(0,0,0, .5), rgba(0,0,0,.5)), url(' + myresultSize.source + ') no-repeat center center');
+            $('.body').css({'background': 'linear-gradient(rgba(0,0,0, .5), rgba(0,0,0,.5)), url(' + myresultSize.source + ') no-repeat center center',
+              'background-size': 'cover'});
           }
         });
       });

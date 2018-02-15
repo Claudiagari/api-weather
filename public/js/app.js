@@ -10,11 +10,12 @@ function initGoogleAPI() {
       url: proxy + apiLinkDS,
       success: function(data) {
         console.log(data);
+        $('#main').toggleClass('hide');
         $('#city').text($('#city-search').val());
         $('#icon').attr('src', '../assets/images/png/' + data.currently.icon + '.png');
         $('#temperature').text(`${((data.currently.temperature - 32) * 5 / 9).toFixed(2)}`);
         $('#wind').text(`${data.currently.windSpeed} m/s`);
-        $('#humidity').text(`${(data.currently.humidity) * 100} %`);
+        $('#humidity').text(`${((data.currently.humidity) * 100).toFixed(2)} %`);
         $('#pressure').text(`${data.currently.pressure} hPa`);
         $('#city-search').val('');
         $('#prediction').on('click', function() {
@@ -35,7 +36,10 @@ $.getJSON(apiurl, function(json) {
       $.each(size.sizes.size, function(i, myresultSize) {
         if (myresultSize.label == 'Large') {
           console.log(myresultSize.source);
-          $('.body').css('background', 'linear-gradient(rgba(0,0,0, .5), rgba(0,0,0,.5)), url(' + myresultSize.source + ') no-repeat center center');
+          setTimeout(function() {
+            $('body').css({'background': 'linear-gradient(rgba(0,0,0, .5), rgba(0,0,0,.5)), url(' + myresultSize.source + ') no-repeat center center',
+              'background-size': 'cover'}, 50000);
+          }) ;
         }
       });
     });
