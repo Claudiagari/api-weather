@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +10,7 @@
   <link rel="stylesheet" href="css/main.css">
   <title>Weather</title>
 </head>
-
-<body class="vh-100 ">
+<body class="vh-100 body">
   <div class="row ">
     <form class="col s12 center-align">
       <h1>Weather</h1>
@@ -35,7 +33,7 @@
     <div class="offset-s1 col s10 offset-s1 offset-2 l8 offset-l2 " id="container">
       <img id="icon" class="responsive-img" src="" alt="">
       <h4>
-        <span id="temperature"></span> °F</h4>
+        <span id="temperature"></span> °C</h4>
     </div>
   </div>
   <div class="row center-align">
@@ -63,7 +61,7 @@
     </div>
   </div>
   <div class="row center-align">
-  <button class="btn waves-effect waves-light blue-grey" type="submit" name="action">Predicción de la semana
+  <button class="btn waves-effect waves-light blue-grey" id="prediction" type="submit" name="action">Predicción de la semana
       <i class="material-icons right"></i>
     </button>
   </div>
@@ -71,8 +69,6 @@
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVwz3mdh_9SgBU0vA6qFqD9eiVnhroNYE&callback=initGoogleAPI&libraries=places,geometry">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js'></script>
   <script src="js/app.js"></script>
 </body>
-
 </html>

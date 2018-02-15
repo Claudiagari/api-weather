@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Claudiagari/api-weather#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "unsplash-js": "^4.8.0"
   }
 }
