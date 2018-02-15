@@ -30,6 +30,20 @@ $(document).ready(function() {
         });
       });
     }
-
+  });
+  let apiurl, myresult, apiurlSize, selectedSize;
+  apiurl = 'https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=1cf0028debc4facaa34a8aedf509babf&gallery_id=72157692666047334&per_page=10&format=json&nojsoncallback=1';
+  $.getJSON(apiurl, function(json) {
+    $.each(json.photos.photo, function(i, myresult) {
+      apiurlSize = 'https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=1cf0028debc4facaa34a8aedf509babf&photo_id=' + myresult.id + '&format=json&nojsoncallback=1';
+      $.getJSON(apiurlSize, function(size) {
+        $.each(size.sizes.size, function(i, myresultSize) {
+          if (myresultSize.label == 'Large') {
+            console.log(myresultSize.source);
+            $('.body').css('background', 'linear-gradient(rgba(0,0,0, .5), rgba(0,0,0,.5)), url(' + myresultSize.source + ') no-repeat center center');
+          }
+        });
+      });
+    });
   });
 });
